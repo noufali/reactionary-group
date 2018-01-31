@@ -1,0 +1,175 @@
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #E6ECF0;
+}
+.button {
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 20px;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #1da1f2;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 9px #AAAAAA;
+}
+
+.button:hover {background-color: #3572B0}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#container {
+  float: left;
+  width: 40%;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+#profile {
+  background-color: #fff;
+  display: block;
+  margin-bottom: 20px;
+  float: left;
+  box-shadow: 2px 2px 5px grey;
+}
+
+#description {
+  background-color: #fff;
+  display: block;
+  height: 30%;
+  padding: 20px;
+  clear: both;
+  font-size: 14px;
+  box-shadow: 2px 2px 5px grey;
+}
+
+h1 {
+  font-size: 30px;
+  color: #50B4F2;
+  font-weight: bold;
+}
+
+#tweetContainer {
+  box-shadow: 2px 2px 5px grey;
+  margin-left: 30px;
+  margin-top: 20px;
+  float: left;
+  width: 52%;
+  height: 60%;
+  background-color: #E9F6FE;
+  overflow: hidden;
+  display: block;
+}
+
+#header {
+  border-bottom: solid 1px rgba(29,161,242,0.4);
+  background: #fff;
+    /*border-radius: 6px 6px 0 0;*/
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 55px;
+    /*line-height: 24px;*/
+    /*font-size: 18px;*/
+}
+
+#body {
+  margin-left:20px;
+  margin-right:20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: block;
+}
+
+.tweetbox {
+  background-color: rgb(255,255,255);
+  display: block;
+  border: solid 1px rgba(29,161,242,0.4);
+  border-radius: 6px;
+  box-sizing: border-box;
+  min-height: 80px;
+  overflow: hidden;
+  padding: 8px;
+  vertical-align: top;
+  word-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  direction: ltr;
+  unicode-bidi: isolate;
+  -webkit-user-modify: read-write;
+  margin-left: 10px;
+  margin-bottom: 11px;
+  opacity: 0.8;
+}
+
+div[data-placeholder]:not([data-div-placeholder-content]):before {
+    content: attr(data-placeholder);
+    color: #aab8c2;
+    font-weight: medium;
+    font-size: 14px;
+    position: absolute;
+}
+
+.tweetbox:focus {
+  outline: 0px solid transparent;
+  border: solid 2px rgba(29,161,242,0.5);
+  opacity: 0.8;
+
+}
+
+.profilePic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    -moz-force-broken-image-icon: 1;
+    border: 0;
+}
+
+#confirmtxt {
+  /* background-color: #3BAB60; */
+  float: left;
+  margin: 0;
+  padding:0;
+  margin-top: 10px;
+}
+
+#confirm {
+  /* background-color: #3BAB60; */
+  float: right;
+  margin-top: 13px;
+}
+
+#tweet{
+  background-color: #50B4F2;
+  color: white;
+  border-radius: 100px;
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  border-style: none;
+}
+
+#tweet:disabled {
+    background: #BAE2FA;
+    color: #EFF8FE;
+    cursor: not-allowed;
+}
+
+#tweet:hover:enabled {
+  background: #1da1f2;
+  cursor: pointer;
+}

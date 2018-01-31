@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<title> #reactionaryGroup </title>
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+	<div id="container">
+
+		<div id="profile">
+			<img id="mainPic" src="img/dudes.jpg" style="width: 100%">
+			<h1 style="padding-left:15px"> #reactionaryGroup </h1>
+		</div>
+
+		<div id="description">
+			<p> The #reactionaryGroup is a set of four characters on Twitter that you can control! <br>
+			<br> The group consists of: <br> 1. The conspiracy theorist <br> 2. The alt rightist <br> 3. The liberal <br> 4. The conservative <br>
+			<br> Help them tweet their opinions about different political topics. <br>
+			<br> This project was started at ITP NYU in the fall of 2017 as an exploration of different viewpoints that exist in our society and the chain reactions they can cause. </p>
+		</div>
+
+	</div>
+
+	<div id="tweetContainer">
+
+		<div id="header">
+			<h3> Compose an argument for each character and tweet! </h3>
+		</div>
+
+		<div id="body">
+			<div>
+				<img class="profilePic" id="conspic" src="img/conspiracy.jpg" style="float: left; margin-right: 10px">
+				<div id="conspiracy" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conspiracy theorist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+				</div>
+			</div>
+
+			<div>
+				<img class="profilePic" id="altpic" src="img/altright.jpg" alt="theAltRightist" style="float: left; margin-right: 10px">
+				<div id="altright" class="tweetbox" name="tweet" contenteditable="true" maxlength="5" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the altrightist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+				</div>
+			</div>
+
+			<div>
+				<img class="profilePic" id="libpic" src="img/liberal.jpg" style="float: left; margin-right: 10px">
+				<div id="liberal" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the liberal think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+				</div>
+			</div>
+
+			<div>
+				<img class="profilePic" id="conservapic" src="img/conservative.jpg" style="float: left; margin-right: 10px">
+				<div id="conservative" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conservative think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+				</div>
+			</div>
+
+			<div id="confirmtxt"></div>
+			<div id="confirm">
+				<input id= "tweet" type = "submit" value = "Tweet" disabled="true"> </input>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.7.3.js"></script>
+
+<script type="text/javascript">
+
+	$(function() {
+		$(document).on('change keydown keypress input', 'div[data-placeholder]', function() {
+			if (this.textContent) {
+				this.dataset.divPlaceholderContent = 'true';
+			} else {
+				delete(this.dataset.divPlaceholderContent);
+			}
+		});
+
+		$("#conspiracy").bind("input", function (event) {
+			let l = $('#conspiracy').text().length;
+			let alt = $('#altright').text().length;
+			let lib = $('#liberal').text().length;
+			let conserv = $('#conservative').text().length;
+
+			if (l > 6 & alt > 6 & lib > 6 & conserv > 6) {
+				$('#tweet').prop('disabled', false);
+			} else {
+				$('#tweet').prop('disabled', true);
+			}
+			// console.log(l);
+
+			if (l > 280) {
+				$('#conspiracy').css('border', 'solid 2px #FF213D');
+			} else {
+				$('#conspiracy').css('border', 'solid 2px rgba(29,161,242,0.5)');
+			}
+		});
+
+		$("#altright").bind("input", function (event) {
+			let consp = $('#conspiracy').text().length;
+			let l = $('#altright').text().length;
+			let lib = $('#liberal').text().length;
+			let conserv = $('#conservative').text().length;
+
+			if (consp > 6 & l > 6 & lib > 6 & conserv > 6) {
+				$('#tweet').prop('disabled', false);
+			} else {
+				$('#tweet').prop('disabled', true);
+			}
+
+			if (l > 280) {
+				$('#altright').css('border', 'solid 2px #FF213D');
+			} else {
+				$('#altright').css('border', 'solid 2px rgba(29,161,242,0.5)');
+			}
+		});
+
+		$("#liberal").bind("input", function (event) {
+			let consp = $('#conspiracy').text().length;
+			let alt = $('#altright').text().length;
+			let l = $('#liberal').text().length;
+			let conserv = $('#conservative').text().length;
+
+			if (consp > 6 & alt > 6 & l > 6 & conserv > 6) {
+				$('#tweet').prop('disabled', false);
+			} else {
+				$('#tweet').prop('disabled', true);
+			}
+
+			if (l > 280) {
+				$('#liberal').css('border', 'solid 2px #FF213D');
+			} else {
+				$('#liberal').css('border', 'solid 2px rgba(29,161,242,0.5)');
+			}
+		});
+
+		$("#conservative").bind("input", function (event) {
+			let consp = $('#conspiracy').text().length;
+			let alt = $('#altright').text().length;
+			let lib = $('#liberal').text().length;
+			let l = $('#conservative').text().length;
+
+			if (consp > 6 & alt > 6 & lib > 6 & l > 6) {
+				$('#tweet').prop('disabled', false);
+			} else {
+				$('#tweet').prop('disabled', true);
+			}
+
+			if (l > 280) {
+				$('#conservative').css('border', 'solid 2px #FF213D');
+			} else {
+				$('#conservative').css('border', 'solid 2px rgba(29,161,242,0.5)');
+			}
+		});
+
+		var socket = io();
+
+		$('#tweet').click(function() {
+			//location.href = "https://twitter.com/ElConspiracist/status/956678970300420097";
+			var num;
+		 	let conspiracy = $('#conspiracy').text();
+		 	let liberal = $('#liberal').text();
+		 	let conservative = $('#conservative').text();
+		 	let altright = $('#altright').text();
+
+		 	// console.log(conspiracy);
+		 	// console.log(liberal);
+		 	// console.log(conservative);
+		 	// console.log(altright);
+
+			socket.emit('people', {
+	          	'conspiracy':conspiracy,
+	            'liberal': liberal,
+	            'conservative': conservative,
+	            'altright': altright
+      });
+
+			socket.on('idstring', function (data) {
+				num = data.id;
+				console.log(num);
+				console.log("https://twitter.com/ElConspiracist/status/" + num);
+				//location.href = "https://twitter.com/ElConspiracist/status/" + num;
+				window.open("https://twitter.com/ElConspiracist/status/" + num, "_blank");
+				location.reload();
+			});
+
+			console.log("people sent");
+			//$('#confirmtxt').append("<p style='margin:0;padding:0'>Tweets are sent! Click <a href='https://twitter.com/ElConspiracist'>here</a> to view</p>");
+		 });
+	});
+
+</script>
+
+</html>
