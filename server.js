@@ -44,37 +44,31 @@ var C = new Twit({
 
 io.sockets.on('connection', function (socket) {
 	socket.on('people', function (data) {
- 		console.log(data);
- 		var conspiracy = data.conspiracy;
+		console.log(data);
+		var conspiracy = data.conspiracy;
 		var liberal = data.liberal;
 		var conservative = data.conservative;
 		var altright = data.altright;
 
 		T.post('statuses/update', { status: conspiracy }, function(err, data, response) {
 			console.log(data.id_str);
-      //let num = data.id_str;
-		  	A.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@ElConspiracist ' + altright }, function (err, data, res) {
-		  		console.log(data);
-		  		L.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@El_Altright ' + liberal }, function (err, data, res) {
-		  			console.log(data);
-		  			C.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@El_Liberale ' + conservative }, function (err, data, res) {
-              console.log(data);
-              let num = data.id_str;
-              socket.emit('idstring', {
-                'id':num
-              });
-            });
-          });
-		  	});
+			A.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@ElConspiracist ' + altright }, function (err, data, res) {
+				console.log(data);
+				L.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@El_Altright ' + liberal }, function (err, data, res) {
+					console.log(data);
+					C.post('statuses/update', { in_reply_to_status_id: data.id_str,  status: '@El_Liberale ' + conservative }, function (err, data, res) {
+						console.log(data);
+						let num = data.id_str;
+						socket.emit('idstring', {
+							'id':num
+						});
+					});
+				});
+			});
 		   });
-
-
-	});
-
+        });
 });
 
-
-//anonymous function
 server.listen(8080, function () {
   console.log('Server listening on port 8080!')
 });
