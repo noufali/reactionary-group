@@ -1,0 +1,79 @@
+
+ { "guncontrol": {
+			"liberalParent": [ 
+				{"tweet":"Guns are not a way to protect your life, it's a way to kill other's lives. #abolishguns #guncontrol"}
+			],
+			"conservativeSoutherner": [ 
+				{"tweet":"The 2nd amendment was made for self defense why you dems wanna take away we need bullets flyin anti ways #keepguns #guncontrol"}
+			],
+			"conspiracyTheorist": [ 
+				{"tweet":"Am I the only one that is concerned that a guy with no past issues had 10 rifles and was found dead after unloading on a crowd? #guncontrol"}
+			],
+			"altRightist": [ 
+				{"tweet":"Guns are necesssary for the protection of our race #keepguns #guncontrol"}
+			]
+	},
+
+	"abortion": {
+			"liberalParent": [ 
+				{"tweet":"Because it's common sense.  Because women are...wait for it...human beings. #prochoice #abortion"}
+			],
+			"conservativeSoutherner": [ 
+				{"tweet":"So tired of the birth control issue!! If you can't afford it then keep your legs together ladies! Instant BC! #DefundPP #prolife #abortion"}
+			],
+			"conspiracyTheorist": [
+				{"tweet": "#Abortion #culture in #USA is part & parcel of a #diabolical #conspiracy to #limit the populations of #White & #Black #CHRISTIAN #AMERICANS!"}
+			],
+			"altRightist": [
+				{"tweet": "Planned parenthood is trying to decrease the population of white babies. We need to stop this. #prolife #abortion"}
+			]
+	},
+
+	"climatechange": {
+			"liberalParent": [ 
+				{"tweet":"Slowing down #climatechange isn’t about saving the planet - It’s about us"}
+			],
+			"conservativeSoutherner": [
+				{"tweet":"#climatechange is a waste of our thoughts, efforts, and tax dollars #climatechange #hoax"}
+			],
+			"conspiracyTheorist": [
+				{"tweet":"It's called the four seasons #climatechange #hoax"}
+			],
+			"altRightist": [
+				{"tweet": "#climatechange is the media trying to redirect our attetion from the real problem of immigrants"}
+			]
+	},
+
+	"gayrights": {
+			"liberalParent": [ 
+				{"tweet":"Love=Love #gayrights #equality I ❤️💛💚💙💜YOU"},
+				{"tweet":"Gay love is real love #gayrights"},
+				{"tweet":"I support the #yes vote — #marriage should be a right for all, not a select few. #equality #Vote #gayrights"},
+				{"tweet":"I am not an animal, I am not a tree.. I am a #human #LGBTQ #gayrights #marriageequaility"},
+				{"tweet":"Let's turn a blind eye to crime and corruption but the homosexuals, no they must be hanged! #rage #gayrights"}
+			],
+			"conservativeSoutherner": [ 
+				{"tweet":"They need to stop trying to promote gay shit. Not everyone (including me) believes In that shit. They are pushing it upon us. #stop #gayrights"},
+				{"tweet":"If you allow gay marriage satan will rise and become the president #stop #gayrights"},
+				{"tweet":"Adam and Eve, not Adam and Steve. #Stop #gayrights #GayMarriage #Debate"},
+				{"tweet":"When did 'gay' stop meaning 'happy'? 👿 #stop #gayrights"},
+				{"tweet":"if gay rights are allowed. Why not just let us date our parents -_- #stop #gayrights"}
+			],
+			"conspiracyTheorist": [
+				{"tweet": "Research shows the smoking weed can actually make you gay #stop #gayrights #conspiracy"}, 
+				{"tweet":"These people have AIDS. You gotta be careful. I mean, the towels could have AIDS #stop #gayrights"},
+				{"tweet":"LBGTQ marriage is just trying to run wedding chapels out of business #conspiracy #stop #gayrights"},
+				{"tweet":"God is angry. We are provoking him with abortions and same-sex marriage and civil unions #stop #gayrights #Conspiracy"},
+				{"tweet":"There will be no Mother’s Day, there will be no Father’s Day, there will be no Easter, there will be no Christmas. #stop #gayrights"}
+			],
+			"altRightist": [
+				{"tweet": "Global warming has come for america, this is god's retribution against the gays #stop #gayrights"}, 
+				{"tweet":"The gays are conspiring against us. #stop #gayrights"},
+				{"tweet":"Allowing gays in our society will lead to depopulation. Open your eyes #stop #gayrights"},
+				{"tweet":"Just like immigrants, gays carry diseases #stop #gayrights"},
+				{"tweet":"Since we have a muslim ban, can we have a gay ban? #stop #gayrights"}
+			]
+	}
+
+}
+	

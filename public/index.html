@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Patua+One|Signika" rel="stylesheet">
 <title> #reactionaryGroup </title>
+<link href="img/twitter.png" rel="icon" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="css/style.css">
 
 <body>
 	<div id="container">
-
-		<div id="profile">
-			<img id="mainPic" src="img/dudes.jpg" style="width: 100%">
-			<h1 style="padding-left:15px"> #reactionaryGroup </h1>
+		<div id="title">
+			<h1> #reactionaryGroup </h1>
+			<div id="description">
+				<p> The #reactionaryGroup is a set of four politically opposing characters on Twitter that you can control! <br>
+				You simply choose a topic and make the characters argue about it. 💥 <br>
+				<div id="group">
+					<div id="bot">
+						<img class="introPic" src="img/conspiracy1.jpg">
+						<p id="bot_text"> 👆🏻 <a href="https://twitter.com/ElConspiracist" target="_blank"> <b> The conspiracy theorist </b> </a> 👆🏻 </p>
+					</div>
+					<div id="bot">
+						<img class="introPic" src="img/altright1.jpg">
+						<p id="bot_text"> 👆🏻 <a href="https://twitter.com/El_Altright/with_replies" target="_blank"> <b> The alt-rightist </b> </a> 👆🏻 </p>
+					</div>
+					<div id="bot">
+						<img class="introPic" src="img/liberal1.jpg">
+						<p id="bot_text"> 👆🏻 <a href="https://twitter.com/El_Liberale/with_replies" target="_blank"> <b> The liberal </b> </a> 👆🏻 </p>
+					</div>
+					<div id="bot">
+						<img class="introPic" src="img/conservative1.jpg">
+						<p id="bot_text"> 👆🏻 <a href="https://twitter.com/El_Conservative/with_replies" target="_blank"> <b> The conservative </b> </a> 👆🏻 </p>
+					</div>
+				</div>
+				</p>
+			</div>
 		</div>
 
-		<div id="description">
-			<p> The #reactionaryGroup is a set of four characters on Twitter that you can control! <br>
-			<br> The group consists of: <br> 1. The conspiracy theorist <br> 2. The alt rightist <br> 3. The liberal <br> 4. The conservative <br>
-			<br> Help them tweet their opinions about different political topics. <br>
-			<br> This project was started at ITP NYU in the fall of 2017 as an exploration of different viewpoints that exist in our society and the chain reactions they can cause. </p>
+		<div id="tweetContainer">
+
+			<div id="header">
+				<h3> 🇺🇸 Make them Argue! 🇺🇸 </h3>
+			</div>
+
+			<div id="body">
+				<div>
+					<img class="profilePic" id="conspic" src="img/conspiracy.jpg">
+					<div id="conspiracy" class="tweetbox" name="tweet" contenteditable="true" onkeypress="return (this.innerText.length <= 252)" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conspiracy theorist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+					</div>
+				</div>
+
+				<div>
+					<img class="profilePic" id="altpic" src="img/altright.jpg" alt="theAltRightist">
+					<div id="altright" class="tweetbox" name="tweet" contenteditable="true" onkeypress="return (this.innerText.length <= 252)" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the altrightist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+					</div>
+				</div>
+
+				<div>
+					<img class="profilePic" id="libpic" src="img/liberal.jpg">
+					<div id="liberal" class="tweetbox" name="tweet" contenteditable="true" onkeypress="return (this.innerText.length <= 252)" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the liberal think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+					</div>
+				</div>
+
+				<div>
+					<img class="profilePic" id="conservapic" src="img/conservative.jpg">
+					<div id="conservative" class="tweetbox" name="tweet" contenteditable="true" onkeypress="return (this.innerText.length <= 252)" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conservative think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
+					</div>
+				</div>
+
+				<div id="confirmtxt">
+						<p style="color:#FF213D"><i id="err"></i></p>
+				</div>
+				<div id="confirm">
+					<input id= "tweet" type = "submit" value = "Tweet" disabled="false"> </input>
+				</div>
+			</div>
 		</div>
-
-	</div>
-
-	<div id="tweetContainer">
-
-		<div id="header">
-			<h3> Compose an argument for each character and tweet! </h3>
-		</div>
-
-		<div id="body">
-			<div>
-				<img class="profilePic" id="conspic" src="img/conspiracy.jpg" style="float: left; margin-right: 10px">
-				<div id="conspiracy" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conspiracy theorist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
-				</div>
-			</div>
-
-			<div>
-				<img class="profilePic" id="altpic" src="img/altright.jpg" alt="theAltRightist" style="float: left; margin-right: 10px">
-				<div id="altright" class="tweetbox" name="tweet" contenteditable="true" maxlength="5" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the altrightist think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
-				</div>
-			</div>
-
-			<div>
-				<img class="profilePic" id="libpic" src="img/liberal.jpg" style="float: left; margin-right: 10px">
-				<div id="liberal" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the liberal think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
-				</div>
-			</div>
-
-			<div>
-				<img class="profilePic" id="conservapic" src="img/conservative.jpg" style="float: left; margin-right: 10px">
-				<div id="conservative" class="tweetbox" name="tweet" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" data-placeholder="What does the conservative think?" dir="ltr" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-dropdown-4">
-				</div>
-			</div>
-
-			<div id="confirmtxt"></div>
-			<div id="confirm">
-				<input id= "tweet" type = "submit" value = "Tweet" disabled="true"> </input>
-			</div>
-
+		<div style="color:rgba(0,0,0,0.5)">
+			<p> *This project was started at the Interactive Telecommunications Program (ITP) at NYU for a class called “Faking the News”! <br> Contact <a href="http://www.noufaljowaysir.com/" target="_blank"> Nouf Aljowaysir</a> for further information. </p>
 		</div>
 	</div>
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdn.socket.io/socket.io-1.7.3.js"></script>
 
 <script type="text/javascript">
+	var segment;
+	var start;
 
 	$(function() {
 		$(document).on('change keydown keypress input', 'div[data-placeholder]', function() {
@@ -79,20 +103,51 @@
 			let alt = $('#altright').text().length;
 			let lib = $('#liberal').text().length;
 			let conserv = $('#conservative').text().length;
+			console.log(l);
 
 			if (l > 6 & alt > 6 & lib > 6 & conserv > 6) {
 				$('#tweet').prop('disabled', false);
 			} else {
 				$('#tweet').prop('disabled', true);
 			}
-			// console.log(l);
 
-			if (l > 280) {
-				$('#conspiracy').css('border', 'solid 2px #FF213D');
+			start = $('#conspiracy').text();
+
+			if (l > 253) {
+				$('#conspiracy').css('border-color', '#FF213D');
+				// let first = start.slice(0, 252);	// extract the first 252 characters
+				// let extra = start.slice(252, l);  // extract the rest
+				// start = first;
+				// start += "<em>" + extra + "</em>";
+				// console.log(start);
+				// $('#conspiracy').html(start);
 			} else {
-				$('#conspiracy').css('border', 'solid 2px rgba(29,161,242,0.5)');
+				$('#conspiracy').css('border-color', 'rgba(29,161,242,0.4)');
 			}
 		});
+
+		// CHECKING CHARACTER TWEET LENGTH
+		setInterval(function() {
+			let consp = $('#conspiracy').text().length;
+			let l = $('#altright').text().length;
+			let lib = $('#liberal').text().length;
+			let conserv = $('#conservative').text().length;
+			let red = 'rgb(255, 33, 61)';
+			let conspiracy_border = $('#conspiracy').css('border-color');
+			let altright_border = $('#altright').css('border-color');
+			let liberal_border = $('#liberal').css('border-color');
+			let conservative_border = $('#conservative').css('border-color');
+
+			if (conspiracy_border == red || altright_border == red || liberal_border == red || conservative_border == red) {
+				$('#err').text("*decrease character length");
+				$('#tweet').prop('disabled', true);
+			} else if (consp > 6 & l > 6 & lib > 6 & conserv > 6){
+				$('#err').text("");
+				$('#tweet').prop('disabled', false);
+			} else{
+				$('#err').text("");
+			}
+		}, 100);
 
 		$("#altright").bind("input", function (event) {
 			let consp = $('#conspiracy').text().length;
@@ -106,10 +161,10 @@
 				$('#tweet').prop('disabled', true);
 			}
 
-			if (l > 280) {
-				$('#altright').css('border', 'solid 2px #FF213D');
+			if (l > 253) {
+				$('#altright').css('border-color', '#FF213D');
 			} else {
-				$('#altright').css('border', 'solid 2px rgba(29,161,242,0.5)');
+				$('#altright').css('border-color', 'rgba(29,161,242,0.4)');
 			}
 		});
 
@@ -125,10 +180,10 @@
 				$('#tweet').prop('disabled', true);
 			}
 
-			if (l > 280) {
-				$('#liberal').css('border', 'solid 2px #FF213D');
+			if (l > 253) {
+				$('#liberal').css('border-color', '#FF213D');
 			} else {
-				$('#liberal').css('border', 'solid 2px rgba(29,161,242,0.5)');
+				$('#liberal').css('border-color', 'rgba(29,161,242,0.4)');
 			}
 		});
 
@@ -144,10 +199,10 @@
 				$('#tweet').prop('disabled', true);
 			}
 
-			if (l > 280) {
-				$('#conservative').css('border', 'solid 2px #FF213D');
+			if (l > 253) {
+				$('#conservative').css('border-color', '#FF213D');
 			} else {
-				$('#conservative').css('border', 'solid 2px rgba(29,161,242,0.5)');
+				$('#conservative').css('border-color', 'rgba(29,161,242,0.4)');
 			}
 		});
 
@@ -167,10 +222,10 @@
 		 	// console.log(altright);
 
 			socket.emit('people', {
-	          	'conspiracy':conspiracy,
-	            'liberal': liberal,
-	            'conservative': conservative,
-	            'altright': altright
+	          	'conspiracy':conspiracy + " #conspiracy" + " #america",
+	            'liberal': liberal + " #liberal" + " #america",
+	            'conservative': conservative + " #conservative" + " #america",
+	            'altright': altright + " #alt-right" + " #america"
       });
 
 			socket.on('idstring', function (data) {
